@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="basic.css" />
+    <title>Grid Example</title>
+    <style>
+      .container{
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 100px auto auto 200px;
+      }
+      .header{
+        grid-column: 1/-1;
+      }
+      .menu{
+        grid-column: 1/-1;
+        height: 100px;
+      }
+      .content{
+        grid-column: 1/-1;
+        height: 500px;
+      }
+      .footer{
+        grid-column: 1/-1;
+      }
+      @media (min-width: 600px){
+        .header{
+        grid-column: 1/-1;
+      }
+      .menu{
+        grid-column: 1/4;
+      }
+      .content{
+        grid-column: 4/-1;
+      }
+      .footer{
+        grid-column: 1/-1;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">HEADER</div>
+      <div class="menu">MENU</div>
+      <div class="content">CONTENT</div>
+      <div class="footer">FOOTER</div>
+    </div>
+  </body>
+</html>

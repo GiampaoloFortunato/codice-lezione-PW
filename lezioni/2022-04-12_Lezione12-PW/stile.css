@@ -1,0 +1,15 @@
+:root{
+    --rosso: #aa0000;
+    --font24px: 24px;
+}
+#wrap{
+
+    --font24px: 240px;
+}
+#wrap .boh{
+    font-size: var(--font24px);
+}
+body{
+    background-color: var(--rosso);
+    font-size: var(--font24px);
+}

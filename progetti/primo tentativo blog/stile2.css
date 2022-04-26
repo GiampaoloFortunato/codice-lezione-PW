@@ -1,0 +1,152 @@
+*{box-sizing: border-box;margin: 0;padding: 0;}
+:root{
+    --coloreScrittaNav: #f3f2f2;
+    --coloreNavBar:lightgreen;
+    --coloreHoverNavBar: rgb(128, 228, 128);
+}
+html{
+    font-family: 'Courier New', Courier, monospace;
+}
+#container{
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    height: 100px;
+    background-color: aqua;
+    width: 100%;
+    display: grid;
+    text-align: center;
+    align-content: center;
+}
+nav{
+    height: 50px;
+    background-color:var(--coloreNavBar);
+    width: 100%;
+}
+nav ul{
+    list-style:none;
+    width: 45%;
+    margin:auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+nav ul li{
+    font-size: 24px;
+    align-self: center;
+    width: 33%;
+    text-align: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color:var(--coloreScrittaNav);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+nav ul li a:hover{
+    font-size: 25px;
+    box-shadow: 0px 0px 10px var(--coloreHoverNavBar);
+}
+main{
+    background-color:firebrick;
+    width: 75%;
+    padding: 10px;
+}
+main article.boxImage{
+    width: 70%;
+    height: 300px;
+    background-color: darkorange;
+    margin: 0px auto;
+}
+main article.boxImage ul{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+main article.boxImage ul li#img1{
+    width: 100%;
+    height: 100%;
+    background-image: url("img/spazio.jpg");
+    background-size: cover;
+}
+main article.boxImage ul li#img1 p{
+    font-size: 18px;
+    padding: 270px 20px;
+    color: white;
+}
+main article.boxImage ul li#img2{
+    width: 100%;
+    height: 100%;
+    background-image: url("img/trip.jpg");
+    background-size: cover;
+}
+main article.boxImage ul li#img2 p{
+    font-size: 18px;
+    padding: 270px 20px;
+    color: white;
+}
+main article.boxImage a{
+    bottom: 300px;
+    font-size: 10px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+main article.boxImage a:hover{
+    color:white;
+    background-color: orange;
+    border-radius: 30px;
+    transition: 1.5s;
+}
+aside{
+    background-color: gold;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+aside h3{
+    text-align: center;
+    padding-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+aside article{
+    padding-top:10px;
+    padding-bottom: 5px;
+    width: 220px;
+    margin:0px auto;
+}
+aside article a{
+    padding: 5px 0px;
+    font-size: 12px;
+    display: flex;
+    border:1px solid black;
+}
+aside article a img{
+    width: 48px;
+    padding-left: 5px;
+}
+aside article a{
+    color: black;
+}
+aside article a p{
+    padding-left: 5px;
+}
+aside article a:hover p{
+    color: grey;
+}
+aside article a:active p{
+    color:black;
+}
+footer{
+    background-color: grey;
+    height: 50px;
+    width: 100%;
+}

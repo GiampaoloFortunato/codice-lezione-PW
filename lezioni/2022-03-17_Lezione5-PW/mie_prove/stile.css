@@ -1,0 +1,26 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    background-color: #d4ddd4;
+    border-style: groove;
+    border-width: 5px;
+    border-color: #45e132;
+}
+
+section{
+    color: red;
+    border: 1px solid black;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+li{
+    margin-left: -800px;
+}
+section:hover ul li{
+    margin-left: 0px;
+}
+.nascondi{
+    margin-left: -800px;;
+    border: 10px solid black;
+}

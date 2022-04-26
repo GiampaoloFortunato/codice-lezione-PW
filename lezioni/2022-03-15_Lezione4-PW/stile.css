@@ -1,0 +1,15 @@
+p{
+    color:blue;
+}
+.elementi-rossi{
+    color: red;
+}
+#secondo-paragrafo{
+    color:rgba(50,20,255,0.4);
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color:brown;
+    font-family: 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,73 @@
+*{margin: 0; box-sizing: border-box;}
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    scroll-behavior:smooth;
+}
+#conteiner{
+    width: 100%;
+    height: 100%;
+    background-image: url("img/spazio.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow:inset 0 18px 14px -14px rgb(0 0 0 / 60%),inset 0 -18px 14px -14px rgb(0 0 0 / 60%);
+
+}
+#navbar{
+    width: 100%;
+    height: 60px;
+    background-color: yellow;
+    position: fixed;
+    box-shadow: 0px -2px 20px black;
+}
+#navbar ul{
+    display: flex;
+    list-style: none;
+    width: 80%;
+    margin: 0px auto;
+}
+#navbar li{
+    margin: 20px auto;
+    font-size: 20px;
+}
+#navbar li a{
+    text-decoration: none;
+    color: black;
+}
+#conteiner2{
+    width: 100%;
+    height: 100%;
+    background-image: url("img/cervo.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow:inset 0 18px 14px -14px rgb(0 0 0 / 60%),inset 0 -18px 14px -14px rgb(0 0 0 / 60%);
+}
+#conteiner3{
+    width: 100%;
+    height: 100%;
+    background-image: url("img/trip.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow:inset 0 18px 14px -14px rgb(0 0 0 / 60%),inset 0 -18px 14px -14px rgb(0 0 0 / 60%);
+}
+#boxpertesto{
+    width: 80%;
+    height: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+h1.titolo{
+    padding: 15% 0px 10% 0px;
+    font-size: 50px;
+    text-align: center;
+}
+p.paragrafo{
+    font-size: 20px;
+}
+#boxpertesto2{
+    width: 80%;
+    height: 100%;
+    margin: 0px auto;
+    text-align: center;
+}

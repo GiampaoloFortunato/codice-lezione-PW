@@ -1,0 +1,41 @@
+*{margin:0;box-sizing: border-box;}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#vistaIniziale{
+    width: 100%;
+    height: 100%;
+    background-color: darkolivegreen;
+    display: flex;
+}
+#vistaIniziale h1{
+    color:white;
+    margin: auto;
+}
+#primoContenitore{
+    width: 100%;
+    height: 100%;
+    background-color:firebrick;
+    display: flex;
+}
+#primoContenitore section{
+    margin:auto;
+    color:white;
+}
+#primoContenitore section h1{
+    font-size: 36px;
+}
+#primoContenitore section{
+    font-size: 24px;
+}
+#primoContenitore section.boh {
+    width: 100%;
+    height: 100%;
+    background-image: url("img/img-mobile-1.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

@@ -1,0 +1,106 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+:root{
+    --rosso:#ff0000;
+}
+html{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+body{
+    background-image: url("img/netflix.jpg");
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+div#wrap{
+    background-color: #0000006b;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+div#container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+nav{
+    width: 100%;
+    height: 60px;
+    margin: 15px 35px;
+}
+nav div.boxNav a{
+    font-size: 50px;
+    color: var(--rosso);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav div.boxNav a:hover{
+    color: var(--rosso);
+}
+main{
+    width: 450px;
+    background-color: #000000b4;
+    border-radius: 5px;
+    height: 600px;
+    margin: 0px auto;
+    padding: 60px 60px;
+}
+main div.containH1{
+    height: 50px;
+}
+main div.containH1 h1{
+    font-size: 32px;
+    color: white;
+    position: absolute;
+}
+main div.containH1 h1::first-letter{
+    text-transform: uppercase;
+}
+main section#inputBox{
+    margin-top: 20px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+main section#inputBox section.containerInput{
+    width: 100%;
+    height: 160px;
+    padding: 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+main section#inputBox section.containerInput section.input{
+    width: 90%;
+    height: 40px;
+}
+main section#inputBox section.containerInput section.input input{
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    background-color: #444444;
+    border-radius:5px;
+    border: transparent;
+    color: white;
+    font-size: 18px;
+    padding-left: 20px;
+}
+main section#inputBox section.containerInput section.input input:focus{
+    padding-top:10px ;
+}
+main section#inputBox section.containerInput section.input input::placeholder{
+    color: #aaaaaa;
+    font-size: 16px;
+}
+
+main section#inputBox section.containerInput section.input input:focus::placeholder{
+    padding-left:0px;
+    top: 0px;
+    position: fixed;
+    font-size: 12px;
+}
+
+main section#inputBox section.containerInput section.input input:invalid{
+    border-bottom: 5px solid orange;
+}

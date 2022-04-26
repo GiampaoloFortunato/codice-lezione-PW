@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form e tabelle</title>
+    <style>
+        input{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Form</h1>
+    <form action="http://pw.netgroup.uniroma2.it/dump.php" method="post" >
+        <fieldset>
+            <label >Nome:<input type="text" name="nome" value="ciao"  ></label><br>
+            <label for="user_mail">Mail:</label><input type="email" name="mail" id="user_mail" ><br>
+            <label>Età:<input type="number" name="eta" max="50" min="0"></label>
+            <input type="date" name="data" id="">
+            <input type="hidden" name="hidden" value="valroe1">
+            <input type="submit" value="submit">
+        </fieldset>
+        <fieldset>
+            <label><input type="checkbox" name="capitale[]" value="london">Londra</label>
+            <label><input type="checkbox" name="capitale[]" value="paris">Parigi</label>
+        </fieldset>
+        <fieldset>
+            <select name="matricola">
+                <option >0281111</option>
+                <option >0284513</option>
+            </select>
+        </fieldset>
+    </form>
+    <h1>Tabelle</h1>
+    
+</body>
+</html>

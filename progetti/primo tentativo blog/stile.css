@@ -1,0 +1,449 @@
+*{box-sizing: border-box;margin: 0;padding: 0;}
+:root{
+    --coloreSfondo: #504c8d;
+    --coloreHeader: #fff;
+    --coloreScrittaNav:#e2aef1;
+    --coloreNavBar:lightgreen;
+    --coloreHoverNavBar: rgb(128, 228, 128);
+    --sfondoAside:#8c88c052;
+}
+@keyframes scrollBoxImage{
+    0%{
+        width: 0%;
+        border-radius: 100%;
+        margin: auto;
+    }
+    100%{
+        border-radius: 20px;
+        width: 100%;
+        margin: auto;
+    }
+}
+html{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--coloreSfondo);
+}
+#container{
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* HEADER */
+header{
+    height: 100px;
+    background-color: var(--coloreSfondo);
+    width: 100%;
+    display: grid;
+    text-align: center;
+    align-content: center;
+    color: var(--coloreScrittaNav);
+}
+
+/* NAV */
+nav{
+    height: 50px;
+    background-color:var(--coloreSfondo);
+    width: 100%;
+}
+nav ul{
+    list-style:none;
+    width: 45%;
+    margin:auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+nav ul li{
+    font-size: 24px;
+    align-self: center;
+    width: 33%;
+    text-align: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color:var(--coloreScrittaNav);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+nav ul li a:hover{
+    font-size: 25px;
+    box-shadow: 0px 0px 10px var(--coloreScrittaNav);
+    border-radius: 10px;
+}
+
+/* MAIN */
+main{
+    background-color:var(--coloreSfondo);
+    width: 75%;
+    padding: 20px;
+}
+article#boxImage{
+    width: 80%;
+    height: 300px;
+    margin:0px auto;
+}
+article#boxImage ul{
+    width: 100%;
+    height: 300px;
+    list-style: none;
+}
+article#boxImage ul li#boxImageDefault{
+    background-image: url("img/notte.jpg");
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    animation-name: scrollBoxImage;
+    animation-duration: 1s;
+    border-radius: 20px;
+}
+article#boxImage ul li#boxImageFirst{
+    background-image: url("img/spazio.jpg");
+    width: 0%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+article#boxImage ul li#boxImageSecond{
+    background-image: url("img/trip.jpg");
+    width:0%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+article#boxImage ul li#boxImageThird{
+    background-image: url("img/natura.jpg");
+    width:0%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+article#boxImage a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    float: left;
+    width: 50px;
+    text-align: center;
+}
+article#boxImage a:hover{
+    color: firebrick;
+    background-color: orange;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+article#boxImage a:hover ~ ul li#boxImageDefault{
+    display: none;
+}
+
+article#boxImage a.boxImage2:hover ~ ul li#boxImageFirst{
+    display: none;
+}
+article#boxImage a.boxImage3:hover ~ ul li#boxImageFirst{
+    display: none;
+}
+article#boxImage a.boxImage1:hover ~ ul li#boxImageFirst{
+    width: 100%;
+    animation-name: scrollBoxImage;
+    animation-duration: 1s;
+}
+article#boxImage a.boxImage2:hover ~ ul li#boxImageSecond{
+    width: 100%;
+    animation-name: scrollBoxImage;
+    animation-duration: 1s;
+}
+article#boxImage a.boxImage1:hover ~ ul li#boxImageSecond{
+    display: none;
+}
+article#boxImage a.boxImage3:hover ~ ul li#boxImageSecond{
+    display: none;
+}
+article#boxImage a.boxImage3:hover ~ ul li#boxImageThird{
+    width: 100%;
+    animation-name: scrollBoxImage;
+    animation-duration: 1s;
+}
+section#Card{
+    padding:20px 5px; 
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+section#Card article.BoxCard{
+    border: 2px solid var(--coloreScrittaNav);
+    margin: 5px;
+    padding:8px
+}
+
+/* ASIDE */
+aside{
+    background-color: var(--sfondoAside);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px var(--coloreScrittaNav);
+}
+aside h3{
+    text-align: center;
+    padding-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+aside article{
+    padding-top:10px;
+    padding-bottom: 5px;
+    width: 220px;
+    margin:0px auto;
+}
+aside article a{
+    padding: 5px 0px;
+    font-size: 12px;
+    display: flex;
+    border:1px solid black;
+}
+aside article a img{
+    width: 48px;
+    padding-left: 5px;
+}
+aside article a{
+    color: black;
+}
+aside article a p{
+    padding-left: 5px;
+}
+aside article a:hover p{
+    color: var(--coloreScrittaNav);
+}
+aside article a:active p{
+    color:black;
+}
+
+/* FOOTER */
+footer{
+    background-color: grey;
+    height: 50px;
+    width: 100%;
+}
+@media (max-width: 700px){
+
+    #container{
+        width: 450px;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* HEADER */
+    header{
+        height: 80px;
+        background-color: var(--coloreSfondo);
+        width: 100%;
+        display: grid;
+        text-align: center;
+        align-content: center;
+        color: var(--coloreScrittaNav);
+    }
+
+    /* NAV */
+    nav{
+        height: 50px;
+        background-color:var(--coloreSfondo);
+        width: 100%;
+    }
+    nav ul{
+        list-style:none;
+        width: 80%;
+        margin:auto;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    
+    }
+    nav ul li{
+        font-size: 18px;
+        align-self: center;
+        width: 33%;
+        text-align: center;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color:var(--coloreScrittaNav);
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    nav ul li a:hover{
+        font-size: 18px;
+        box-shadow: 0px 0px 10px var(--coloreScrittaNav);
+        border-radius: 10px;
+    }
+
+    /* MAIN */
+    main{
+        background-color:var(--coloreSfondo);
+        width: 100%;
+        padding: 20px;
+    }
+    article#boxImage{
+        width: 100%;
+        height: 200px;
+        margin:0px auto;
+    }
+    article#boxImage ul{
+        width: 100%;
+        height: 200px;
+        list-style: none;
+    }
+    article#boxImage ul li#boxImageDefault{
+        background-image: url("img/notte.jpg");
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        animation-name: scrollBoxImage;
+        animation-duration: 1s;
+        border-radius: 20px;
+    }
+    article#boxImage ul li#boxImageFirst{
+        background-image: url("img/spazio.jpg");
+        width: 0%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+    }
+    article#boxImage ul li#boxImageSecond{
+        background-image: url("img/trip.jpg");
+        width:0%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+    }
+    article#boxImage ul li#boxImageThird{
+        background-image: url("img/natura.jpg");
+        width:0%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+    }
+    article#boxImage a{
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        float: left;
+        width: 50px;
+        text-align: center;
+    }
+    article#boxImage a:hover{
+        color: firebrick;
+        background-color: orange;
+        border-radius: 15px;
+        transition: 1s;
+    }
+
+    article#boxImage a:hover ~ ul li#boxImageDefault{
+        display: none;
+    }
+
+    article#boxImage a.boxImage2:hover ~ ul li#boxImageFirst{
+        display: none;
+    }
+    article#boxImage a.boxImage3:hover ~ ul li#boxImageFirst{
+        display: none;
+    }
+    article#boxImage a.boxImage1:hover ~ ul li#boxImageFirst{
+        width: 100%;
+        animation-name: scrollBoxImage;
+        animation-duration: 1s;
+    }
+    article#boxImage a.boxImage2:hover ~ ul li#boxImageSecond{
+        width: 100%;
+        animation-name: scrollBoxImage;
+        animation-duration: 1s;
+    }
+    article#boxImage a.boxImage1:hover ~ ul li#boxImageSecond{
+        display: none;
+    }
+    article#boxImage a.boxImage3:hover ~ ul li#boxImageSecond{
+        display: none;
+    }
+    article#boxImage a.boxImage3:hover ~ ul li#boxImageThird{
+        width: 100%;
+        animation-name: scrollBoxImage;
+        animation-duration: 1s;
+    }
+    section#Card{ 
+        width: 100%;
+        padding: 10px 0px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    section#Card article.BoxCard{
+        border: 2px solid var(--coloreScrittaNav);
+        margin: 10px;
+        padding:8px
+    }
+
+    /* ASIDE */
+    aside{
+        background-color: var(--sfondoAside);
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px var(--coloreScrittaNav);
+    }
+    aside h3{
+        text-align: center;
+        padding-top: 15px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+    aside article{
+        padding-top:10px;
+        padding-bottom: 5px;
+        width: 220px;
+        margin:0px auto;
+    }
+    aside article a{
+        padding: 5px 0px;
+        font-size: 12px;
+        display: flex;
+        border:1px solid black;
+    }
+    aside article a img{
+        width: 48px;
+        padding-left: 5px;
+    }
+    aside article a{
+        color: black;
+    }
+    aside article a p{
+        padding-left: 5px;
+    }
+    aside article a:hover p{
+        color: var(--coloreScrittaNav);
+    }
+    aside article a:active p{
+        color:black;
+    }
+
+    /* FOOTER */
+    footer{
+        background-color: grey;
+        height: 50px;
+        width: 100%;
+    }
+}

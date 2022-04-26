@@ -1,0 +1,253 @@
+/**
+* TODO: 
+*   1)sistemare border 
+*   2)controllare margin e padding
+*/
+
+/* GLOBALE */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+*{margin: 0;padding: 0;box-sizing: border-box;}
+:root{
+    --backgroundBody: #fff;
+    --backgroundFooter: #171717;
+    --colorTitle:#c76161;
+    --colorLink: #3a7777;
+    --colorLinkHover: #F5AF33;
+    --bordo: #888888;
+    --commentiColor: #3d3257;
+    --commentiColoreRisp: #fff;
+    --backgroundCommenti: #f8f6f9;
+    --backgroundCommentiRispo: #c76161;
+    --colorTextFooter: #f1f1f1;
+    --fontBody: 'Hind', sans-serif;
+    --fontTitle: 'Play', sans-serif;
+
+}
+html,body{
+    font-size: 16px;
+    font-family: var(--fontBody);
+    background-color: var(--backgroundBody);
+}
+h1,h2,h3,h4,h5{
+    font-family: var(--fontTitle);
+    color: var(--colorTitle);
+    font-weight: normal;
+}
+a{
+    text-decoration: none;
+    color: var(--colorLink);
+}
+a:hover{
+    color: var(--colorLinkHover);
+}
+/* CONTENITORE - FLEX */
+#container{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* HEADER */
+header{
+    width: 100%;
+    height: 230px;
+    background-image: url("img/pic2.jpg");
+    background-attachment: fixed;
+}
+header section{
+    background-color: var(--backgroundBody);
+    height: 70px;
+    width: 100%;
+    margin: 80px 0px;
+}
+#boxHeader{
+    width: 944px;
+    height: 100%;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#boxHeader #boxTitle{
+    width: 400px;
+    height: 70px;
+    background-image: url("img/bg-logo.png");
+    background-position: bottom;
+    margin-top: 20px;
+}
+#boxTitle h1{
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+nav{
+    height: 70px;
+    width: 544px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    height: 100%;
+}
+nav ul li{
+    margin: auto;
+}
+nav ul li a{
+    font-weight: bold;
+}
+/* MAIN */
+main{
+    width: 944px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* MAIN - COLONNA UNICA */
+section#ricetta{
+    width: 100%;
+    border: 1px solid var(--bordo);
+    display: flex;
+    flex-wrap: wrap;
+}
+section.categoria{
+    width: 944px;
+}
+section.categoria p{
+    color: var(--colorLinkHover);
+    float: left;
+    padding: 20px 0px;
+}
+section.categoria section.share{
+    float: right;
+    margin-top: 20px;
+}
+section.share img{
+    width: 25px;
+    height: 25px;
+}
+section#ricetta h1{
+    font-size: 2em;
+}
+section#ricetta p img{
+    width: 944px;
+}
+/* MAIN - DOPPIA COLONNA - SX */
+main article{
+    width: 600px;
+}
+main article h2{
+    font-size: 1.4em;
+    padding-bottom: 15px;
+    border: 1px solid var(--bordo);
+}
+/* MAIN - COLONNA SX - INGREDIENTI*/
+main article ul#ingredienti{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-image: url("img/dot.png");
+    list-style-position: inside;
+}
+article ul#ingredienti li{
+    width: 300px;
+    float: left;
+    padding: 15px;
+    font-size: 1.1em;
+    text-transform: lowercase;
+}
+/* MAIN - COLONNA SX - PREPARAZIONE RICETTA*/
+article section#prepRicetta p{
+    margin: 10px 0px;
+}
+/* MAIN - COLONNA SX - COMMENTI*/
+article ul#sezioneCommenti{
+    font-size: 14px;
+    line-height: 20px;
+    list-style: none;
+}
+ul#sezioneCommenti strong{
+    font-weight: normal;
+}
+p.commento{
+    color: var(--commentiColor);
+    background-color: var(--backgroundCommenti);
+    padding: 25px 15px;
+}
+article ul#sezioneCommenti li.risposta{
+    /*text-indent: 25px;*/
+    padding-left:25px;
+}
+p.commentoRisp{
+    color: var(--commentiColoreRisp);
+    background-color: var(--backgroundCommentiRispo);
+    padding: 25px;
+}
+
+/* MAIN - DOPPIA COLONNA - DX */
+aside{
+    width: 300px;
+    margin-left: 44px;
+}
+aside img{
+    margin: 20px 0px;
+}
+aside section h3{
+    font-size: 1.2em;
+}
+aside section ul{
+    list-style: none;
+}
+aside section ul li{
+    display: flex;
+    align-items: center;
+}
+aside section ul li img{
+    border:2px solid var(--colorTitle);
+
+}
+aside section ul li a{
+    text-align: center;
+    padding-left: 15px;
+}
+
+/* FOOTER */
+footer{
+    width: 100%;
+    background-color: var(--backgroundFooter);
+    color: var(--colorTextFooter);
+}
+footer section.boxFooter{
+    width: 944px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+footer section.boxFooter article{
+    width: 944px;
+}
+section.boxFooter article section{
+    width: 33.3333%;
+    float: left;
+}
+section.boxFooter article section ul{
+    list-style: none;
+}
+section.boxFooter article section h3{
+    color: var(--colorLinkHover);
+    font-size: 1.2em;
+}
+section.boxFooter section.newsletter{
+    width: 100%;
+    border: 1px solid var(--colorTextFooter);
+}
+section.boxFooter section.newsletter h4{
+    color: var(--colorTitle);
+    font-size: 1em;
+}
+section.boxFooter section.boxCopy{
+    width: 100%;
+}
+section.boxFooter section.boxCopy p.copy{
+    font-size: 0.8em;
+    float: left;
+}
+section.boxFooter section.boxCopy section.btn{
+    float: right;
+}

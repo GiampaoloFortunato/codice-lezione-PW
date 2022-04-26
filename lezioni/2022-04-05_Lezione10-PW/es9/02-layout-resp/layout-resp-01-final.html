@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="layouts-common.css">
+    <style>
+
+     
+
+.c1, .c2, .c3, .c4, .c5{
+        width: 100%;
+      }
+
+      @media screen and (min-width: 600px) {
+        .c1, .c2, .c3, .c4, .c5{
+          float: left;
+        }
+
+        .c2, .c3, .c4, .c5{
+          width: 50%;
+        }
+        .container{
+            width: 600px;
+            margin: 0px auto;
+          }
+
+      }
+
+      @media screen and (min-width: 900px){
+          .c1{
+            width: 60%;
+          }
+          .c2{
+            width: 40%;
+          }
+          .c3{
+            width: 33%;
+          }
+          .c4{
+            width: 33%;
+          }
+          .c5{
+            width: 34%;
+          }
+
+          .container{
+            width: 900px;
+            margin: 0px auto;
+          }
+
+      } 
+       
+
+
+
+    </style>
+    <title>Responsive Web Design Pattern: Mostly Fluid</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="c1">
+        col 1
+      </div>
+      <div class="c2">
+        col 2
+      </div>
+      <div class="c3">
+        col 3
+      </div>
+      <div class="c4">
+        col 4
+      </div>
+      <div class="c5">
+        col 5
+      </div>
+    </div>
+  </body>
+</html>

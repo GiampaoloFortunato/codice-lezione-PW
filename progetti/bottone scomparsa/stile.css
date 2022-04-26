@@ -1,0 +1,10 @@
+#bottone{
+    font-size: 24px;
+}
+ul{
+    display: none;
+}
+
+#bottone:active + ul{
+    display: block;
+}

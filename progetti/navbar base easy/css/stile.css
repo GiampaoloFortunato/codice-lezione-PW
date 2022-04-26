@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    background-color: aquamarine;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    color: black;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+ul.nav{
+    list-style: none;
+}
+ul.nav li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+ul.nav li a{
+    text-decoration: none;
+    transition: all 0.5s ease 0.2s;
+}
+ul.nav li a:hover{
+    color: #147eff;
+}

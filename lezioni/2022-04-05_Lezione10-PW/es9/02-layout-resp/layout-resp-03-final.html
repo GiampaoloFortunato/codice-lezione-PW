@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="layouts-common.css">
+    <style>
+
+
+.container{
+         display: flex; 
+         flex-flow: wrap;
+      }
+
+      .c1{
+        width: 60%;
+        height: 800px;
+        order: 2;
+      }
+
+      .c2{
+        width: 20%;
+        order: 1;
+      }
+
+      .c3{
+        width: 20%;
+        order: 3;
+      }
+
+
+      @media screen and (max-width: 900px){
+          .c1{
+            order: 1;
+            width: 70%;
+          }
+          .c2{
+            order: 2;
+            width: 30%;
+          }
+
+          .c3{
+            width: 100%
+          }
+      }
+
+      @media screen and (max-width: 600px){
+          .c1{
+            order: 1;
+            width: 100%;
+          }
+          .c2{
+            order: 2;
+            width: 100%;
+          }
+
+          .c3{
+            width: 100%
+          }
+      }
+
+
+    </style>
+    <title>Responsive Web Design Pattern: Column Drop</title>
+  </head>
+  <body>
+    <div class="container" role="main">
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+    </div>    
+  </body>
+</html>

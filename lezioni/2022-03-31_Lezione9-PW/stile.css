@@ -1,0 +1,36 @@
+*{box-sizing: border-box;margin: 0;padding: 0;}
+
+header{
+    background-color: gray;
+    height: 100px;
+    width: 100%;
+    order: 0;
+}
+nav{
+    background-color: darkgreen;
+    height: 200px;
+    width: 20%;
+    order:2;
+}
+main{
+    background-color: darkred;
+    width: 60%;
+    order:1;
+}
+aside{
+    background-color: darkblue;
+    width: 20%;
+    order:3;
+}
+footer{
+    background-color: lightgray;
+    height: 200px;
+    width: 100%;
+    order:4;
+}
+#container{
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
