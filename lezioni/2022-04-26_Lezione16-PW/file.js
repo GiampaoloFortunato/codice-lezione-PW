@@ -1,5 +1,7 @@
 "use strict";
 
+let a = 20;
+
 let calculator = {
     a: 0,
     b: 0,
