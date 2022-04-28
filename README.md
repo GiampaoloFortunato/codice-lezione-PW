@@ -1,6 +1,6 @@
 # Codice del corso Programmazione Web 
 
-**Questo repository contiene tutto il materiale svolto durante il corso di Programmazione Web (PW) del cdl di informatica (AA. 2021/22)**
+> Questo repository contiene tutto il materiale svolto durante il corso di Programmazione Web (PW) del cdl di informatica (AA. 2021/22)
 
 Cartella lezioni: codice svolto a lezione.
 
