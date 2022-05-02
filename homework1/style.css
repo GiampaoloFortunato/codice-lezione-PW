@@ -16,7 +16,6 @@
     --colorTextFooter: #f1f1f1;
     --fontBody: 'Hind', sans-serif;
     --fontTitle: 'Play', sans-serif;
-
 }
 html,body{
     font-size: 16px;
@@ -131,18 +130,17 @@ main article h2{
     font-size: 1.4em;
     padding-bottom: 15px;
     border-bottom: 1px solid var(--bordo);
+    clear: left;
 }
 /* MAIN - COLONNA SX - INGREDIENTI*/
 main article ul#ingredienti{
-    display: flex;
-    flex-wrap: wrap;
     list-style-image: url("img/dot.png");
     list-style-position: inside;
 }
 article ul#ingredienti li{
     width: 300px;
     float: left;
-    padding: 15px;
+    padding: 15px 15px 15px 0px;
     font-size: 1.1em;
     text-transform: lowercase;
 }
