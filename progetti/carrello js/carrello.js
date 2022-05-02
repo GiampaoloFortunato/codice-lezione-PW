@@ -45,5 +45,4 @@ let car = {
     totalPrice: function() {
         return this.shoppingBag.length != 0 ? this.shoppingBag.reduce((acc, item) => acc + item.price, 0) : 0;
     },
-    
 };
