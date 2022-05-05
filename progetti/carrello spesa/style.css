@@ -1,0 +1,107 @@
+*{padding: 0;margin: 0;box-sizing: border-box;}
+:root{
+    --bgHeader: #33c08a;
+    --bgNav: #d0a030;
+    --txtNav: #222;
+    --bgMain: #30aa50;
+    --bgAside: #30aa51b9;
+    --bgArticle: #33c08a;
+}
+a{text-decoration: none;}
+ul{list-style: none;}
+#container{
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    width: 100%;
+    height: 200px;
+    background-color: var(--bgHeader);
+    display: flex;
+}
+header h1{
+    margin: auto;
+}
+nav{
+    width: 100%;
+    height: 100px;
+    background-color: var(--bgNav);
+}
+nav ul{
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+nav ul li{width: 33%;text-align: center;}
+nav ul li a{color: var(--txtNav);}
+nav ul li a:hover{font-weight: bold;}
+
+#wrap{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+main{
+    width: 700px;
+    height: 1000px;
+    background-color: var(--bgMain);
+}
+main section{
+    width: 600px;
+    height: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+main section article{
+    width: 170px;
+    height: 185px;
+    margin: 15px;
+    background-color: var(--bgArticle);
+}
+section article h3{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+.conteinerBtnAdd{
+    display: flex;
+    height: 50%;
+    align-items: center;
+}
+section article button{
+    width: 80px;
+    height: 40px;
+    margin: auto;
+    background-color: var(--bgNav);
+    border-radius: 10px;
+}
+aside{
+    width: 300px;
+    background-color: var(--bgAside);
+}
+
+#cntCarrello{
+    width: 250px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#cntCarrello h1{
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    color: var(--txtNav);
+}
+
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: var(--txtNav);
+}
