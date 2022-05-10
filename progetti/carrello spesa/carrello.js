@@ -19,12 +19,13 @@ let car = {
 let elemAdd;
 let elemDelete;
 
-window.onload = function(){  
+window.addEventListener("click", () => main());
+
+function main(){  
     elemAdd = document.getElementsByClassName("add");
     elemDelete = document.getElementsByClassName("delete");
     fCicloAdd();
-    fCicloDelete();
-   
+    fCicloDelete();  
 }
 
 function fCicloAdd(){
@@ -46,7 +47,24 @@ function aggiungiProdotto(index){
 }
 
 function visualizzaNuovoProdotto(){
-    document.getElementById("lista").innerHTML += "<li class='prodList'> <p>" + car.shoppingBag[car.shoppingBag.length-1].name + "</p><div class='costo'>"+ car.shoppingBag[car.shoppingBag.length-1].price + "</div><button class='delete'>x</button></li>";
+    //modo 1
+    let li = document.createElement("li");
+    li.className = "prodList";
+    let div = document.createElement("div");
+    div.className = "costo";
+    let button = document.createElement("button");
+    button.className = "delete";
+    let p = document.createElement("p");
+    p.appendChild(document.createTextNode(car.shoppingBag[car.shoppingBag.length-1].name));
+    div.appendChild(document.createTextNode(car.shoppingBag[car.shoppingBag.length-1].price));
+    button.appendChild(document.createTextNode("x"));
+    li.appendChild(p);
+    li.appendChild(div);
+    li.appendChild(button);
+    document.getElementById("lista").innerHTML += li.outerHTML;
+
+    //modo 2
+    //document.getElementById("lista").innerHTML += "<li class='prodList'> <p>" + car.shoppingBag[car.shoppingBag.length-1].name + "</p><div class='costo'>"+ car.shoppingBag[car.shoppingBag.length-1].price + "</div><button class='delete'>x</button></li>";
 }
 
 function stampaPrezzo(){
