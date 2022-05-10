@@ -1,0 +1,15 @@
+[
+    {
+        "esame": "Analisi",
+        "voto": "28"
+    },
+
+    {
+        "esame": "Algoritmi e strutture dati 1",
+        "voto": "26"
+    },
+    {
+        "esame": "Fisica",
+        "voto": "30"
+    }
+]

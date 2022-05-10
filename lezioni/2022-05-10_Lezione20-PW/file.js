@@ -34,6 +34,7 @@ function addNewElementToList(){
 let url = "voti.json";
 let xhr = new XMLHttpRequest();
 xhr.onreadystatechange = () => {
+    //readyState uguale 4 significa DONE. Può assumere valori da 0 a 4
     if (xhr.readyState === 4 && xhr.status === 200){
         let exams = JSON.parse(xhr.responseText);
 
