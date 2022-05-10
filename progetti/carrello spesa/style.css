@@ -80,7 +80,7 @@ section article .price{
     height: 50%;
     align-items: center;
 }
-section article button{
+section article button.add{
     width: 80px;
     height: 40px;
     margin: auto;
@@ -113,10 +113,19 @@ aside{
 }
 #cntCarrello ul li p{
     width: 50%;
+    font-size: 18px;
 }
 #cntCarrello ul li .costo{
     width: 50%;
     padding-left: 20px;
+}
+#cntCarrello ul li button.delete{
+    width: 15px;
+    height: 15px;
+    background-color: #aaa;
+    border-radius: 5px;
+    font-size: 15px;
+    color: red;
 }
 #cntCarrello #totalPrice{
     margin-top: 20px;
