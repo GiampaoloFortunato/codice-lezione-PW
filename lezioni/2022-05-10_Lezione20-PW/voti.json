@@ -1,0 +1,16 @@
+[
+    {
+        "esame": "Programmazione Web",
+        "voto": "30"
+    },
+
+    {
+        "esame": "Analisi",
+        "voto": "18"
+    },
+
+    {
+        "esame": "Fondamenti di infomatica",
+        "voto": "22"
+    }
+]
