@@ -1,3 +1,10 @@
+/**
+ * TODO: 
+ *      1. FIX sparo continuo
+ *      2. Modificare spawn avversari (troppo vicini)
+ *      3. Far sparare gli avversari
+ */
+
 (function(){
     "use strict";
 
