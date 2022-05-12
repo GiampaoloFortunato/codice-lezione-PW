@@ -37,8 +37,8 @@ xhr.onreadystatechange = () => {
     //readyState uguale 4 significa DONE. Può assumere valori da 0 a 4
     if (xhr.readyState === 4 && xhr.status === 200){
         let exams = JSON.parse(xhr.responseText);
-
         let tbody = document.getElementById("voti").getElementsByTagName("tbody");
+        
         exams.forEach((el) => {
             let tr = document.createElement("tr");
             let tdEx = document.createElement("td");
@@ -50,7 +50,7 @@ xhr.onreadystatechange = () => {
             tr.appendChild(tdEx);
             tr.appendChild(tdMark);
         
-            tbody[0].appendChild(tr);
+           // tbody[0].appendChild(tr);
         });
     }
 };
