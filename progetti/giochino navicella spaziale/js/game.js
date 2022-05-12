@@ -9,10 +9,9 @@
     let canvasContex = canvas.getContext("2d");
 
     let navicella = {x: parseInt(canvas.width/2)-24, y: parseInt(canvas.height)-60, speed: 256};
-    let fire = {x: parseInt(canvas.width/2)+24, y: parseInt(canvas.height)-16, speed: 300};
+    let fire = {x: parseInt(canvas.width/2)+24, y: parseInt(canvas.height)-16, speed: 200};
     let attacco = [];
     let score = 0;
-
     const requestAnimationFrame =
         window.requestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -28,11 +27,10 @@
     let bgFlag = false;
     let navFlag = false;
     let fireFlag = false;
-    let fireDisplay = false;
     bgImage.onload = () => bgFlag = true;
     imgNavicella.onload = () => navFlag = true;
     imgFire.onload = () => fireFlag = true;
-
+    
     function viewScore(){
         canvasContex.fillStyle = "#00ff90";
         canvasContex.font = "18px Courier";
@@ -43,8 +41,11 @@
             canvasContex.drawImage(bgImage, 0, 0);
         if(navFlag)    
             canvasContex.drawImage(imgNavicella, navicella.x, navicella.y);
-        if(fireFlag && fireDisplay)
-            canvasContex.drawImage(imgFire,fire.x, fire.y);
+        if(fireFlag){
+            attacco.forEach((el) => {
+                canvasContex.drawImage(imgFire, el.x, el.y);
+            })
+        }
         viewScore();
     }    
     
@@ -59,17 +60,18 @@
         if(39 in keysDown && navicella.x < canvas.width-48){
             navicella.x += navicella.speed * modifier;
         }
-        if(32 in keysDown && !fireDisplay){
+        if(32 in keysDown){
             fire.x = navicella.x+12;
-            fireDisplay = true;
-            //attacco[attacco.length] = fire;
+            fire.y = parseInt(canvas.height)-16;
+            attacco[attacco.length] = Object.assign({}, fire);
         }else{
-            if(fire.y > 20){
-                fire.y -= fire.speed * modifier;
-            }else{
-                fire.y = parseInt(canvas.height)-16;
-                fireDisplay = false;
-            }
+            attacco.forEach((el, index) => {
+                if(el.y > 20){
+                    el.y -= el.speed * modifier;
+                }else{
+                    attacco.splice(index,1);
+                }
+            });
         }
     }
 
