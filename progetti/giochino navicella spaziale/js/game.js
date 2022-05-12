@@ -3,13 +3,14 @@
 
     let canvas = document.createElement("canvas");
     canvas.width = 626;
-    canvas.height = 626;
+    canvas.height = 500;
     document.body.appendChild(canvas);
 
     let canvasContex = canvas.getContext("2d");
 
-    let navicella = {x: parseInt(canvas.height/2)-24, y: parseInt(canvas.width)-60, speed: 256};
-    let fire = {x: parseInt(canvas.height/2)-24, y: parseInt(canvas.width)-20, speed: 150};
+    let navicella = {x: parseInt(canvas.width/2)-24, y: parseInt(canvas.height)-60, speed: 256};
+    let fire = {x: parseInt(canvas.width/2)+24, y: parseInt(canvas.height)-16, speed: 300};
+    let attacco = [];
     let score = 0;
 
     const requestAnimationFrame =
@@ -52,20 +53,21 @@
     addEventListener("keyup", (e) => {delete keysDown[e.keyCode]});
 
     function update(modifier){
-        if(37 in keysDown){
+        if(37 in keysDown && navicella.x > 0){
             navicella.x -= navicella.speed * modifier;
         }
-        if(39 in keysDown){
+        if(39 in keysDown && navicella.x < canvas.width-48){
             navicella.x += navicella.speed * modifier;
         }
         if(32 in keysDown && !fireDisplay){
-            fire.x = navicella.x;
+            fire.x = navicella.x+12;
             fireDisplay = true;
+            //attacco[attacco.length] = fire;
         }else{
             if(fire.y > 20){
                 fire.y -= fire.speed * modifier;
             }else{
-                fire.y = parseInt(canvas.width)-84;
+                fire.y = parseInt(canvas.height)-16;
                 fireDisplay = false;
             }
         }
