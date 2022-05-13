@@ -28,6 +28,7 @@
     let enemy = {x:30, y:30};
     let listFire = [];
     let listEnemy = [];
+    let listEnemyFire = [];
     let score = 0;
 
     const requestAnimationFrame =
@@ -66,6 +67,9 @@
             contex.drawImage(imgNavicella, navicella.x, navicella.y);
         if(fireFlag){
             listFire.forEach((el) => {
+                contex.drawImage(imgFire, el.x, el.y);
+            })
+            listEnemyFire.forEach((el) =>{
                 contex.drawImage(imgFire, el.x, el.y);
             })
         }
@@ -111,6 +115,8 @@
             });
         }
         createEnemy(4);
+        enemyFire(4)
+        viewEnemyFire(modifier);
         hit();
     }
     //controllo se ho colpito navicella avversaria
@@ -133,6 +139,42 @@
             newEnemy.y = parseInt(Math.random() * 200);
             listEnemy[listEnemy.length] = newEnemy;
         }
+    }
+
+    function viewEnemyFire(modifier){
+        listEnemyFire.forEach((el, index) =>{
+            if(Math.abs(navicella.x - el.x) < 20 && Math.abs(navicella.y - el.y) < 20){
+                navicella.x = -1000;
+                gameOver();
+            }
+            if(el.y > 10){
+                el.y += fire.speed * modifier;
+            }else{
+                listEnemyFire.splice(index,1);
+            }
+        })
+
+    }
+
+    function enemyFire(difficolta){
+        listEnemy.forEach((el) => {
+            let rand = Math.random();
+            if(rand < difficolta * 10**-3){
+                let newFire = Object.assign({}, fire);
+                newFire.x = el.x;
+                newFire.y = el.y+10;
+                listEnemyFire[listEnemyFire.length] = newFire;
+            }
+        })
+    }
+
+    function gameOver(){
+        setTimeout(() => schermataGameOver(), 1000);
+        setTimeout(() => location.reload(), 2000);
+    }
+
+    function schermataGameOver(){
+        alert("game over");
     }
 
     function main(){
