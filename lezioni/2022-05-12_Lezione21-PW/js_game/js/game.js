@@ -28,12 +28,12 @@
     const heroImage = new Image();
     let heroReady = false;
     heroImage.onload = () => heroReady = true;
-    heroImage.src = 'images/hero.png';
+    heroImage.src = 'images/giamp.ico';
     //mostro
     const monsterImage = new Image();
     let monsterReady = false;
     monsterImage.onload = () => monsterReady = true;
-    monsterImage.src = 'images/monster.png';
+    monsterImage.src = 'images/giorgio.ico';
 
     let keysDown = {};
     addEventListener("keydown", (e)=> keysDown[e.keyCode] = true);
