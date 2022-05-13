@@ -3,6 +3,7 @@
  *      1. FIX sparo continuo
  *      2. Modificare spawn avversari (troppo vicini)
  *      3. Far sparare gli avversari
+ *      4. Aggiungere vite alle navicelle
  */
 
 (function(){
@@ -13,6 +14,13 @@
     canvas.height = 500;
     document.body.appendChild(canvas);
     let contex = canvas.getContext("2d");
+
+    //Ogni tot millisecondi posso sparare un fuoco
+    let intervallo = false;
+    let speedFire = 50;
+    setInterval(() => {
+        intervallo ? intervallo = false: intervallo = true;
+    }, speedFire);
 
     //Strutture dati per rappresentare personaggi
     let navicella = {x: parseInt(canvas.width/2)-24, y: parseInt(canvas.height)-60, speed: 256};
@@ -89,7 +97,7 @@
             navicella.x += navicella.speed * modifier;
         }
         //32 corrisponde alla spacebar
-        if(32 in keysDown){
+        if(32 in keysDown && intervallo){
             fire.x = navicella.x+12;
             fire.y = parseInt(canvas.height)-16;
             listFire[listFire.length] = Object.assign({}, fire);

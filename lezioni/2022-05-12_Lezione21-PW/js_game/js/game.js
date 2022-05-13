@@ -7,7 +7,7 @@
     canvas.height = 480;
     document.body.appendChild(canvas);
 
-    let monster = {x: 0, y:0};
+    let monster = {x: 0, y:0, speed:200};
     let hero = {x:0, y: 0, speed: 256};
     let monstersCaught = 0;
 
@@ -50,18 +50,50 @@
         //up
         if(38 in keysDown && hero.y > 0){
             hero.y -= hero.speed * modifier;
+        }else if(38 in keysDown && hero.y <= 0){
+            hero.y = canvas.height-48;
         }
         //down
         if(40 in keysDown && hero.y < canvas.height - 32){
             hero.y += hero.speed * modifier;
+        }else if(40 in keysDown && hero.y >= (canvas.height - 32)){
+            hero.y = 0;
         }
         //left
         if(37 in keysDown && hero.x > 0){
             hero.x -= hero.speed * modifier;
+        }else if(37 in keysDown && hero.x <= 0){
+            hero.x = canvas.width;
         }
         //rigth
         if(39 in keysDown && hero.x < canvas.width - 32){
             hero.x += hero.speed * modifier;
+        }else if(39 in keysDown && hero.x > canvas.width - 32){
+            hero.x = 0;
+        }
+        //monster left
+        if(65 in keysDown && monster.x > 0){
+            monster.x -= monster.speed * modifier;
+        }else if(65 in keysDown && monster.x <= 0){
+            monster.x = canvas.width;
+        }
+        //monster down
+        if(83 in keysDown && monster.y < canvas.height -32){
+            monster.y += monster.speed * modifier;
+        }else if(83 in keysDown && monster.y >= canvas.height -32){
+            monster.y = 0;
+        }
+        //monster rigth
+        if(68 in keysDown && monster.x < canvas.width - 32){
+            monster.x += monster.speed * modifier;
+        }else if(68 in keysDown && monster.x >= canvas.width - 32){
+            monster.x = 0;
+        }
+        //monster up
+        if(87 in keysDown && monster.y > 0){
+            monster.y -= monster.speed * modifier;
+        }else if(87 in keysDown && monster.y <= 0){
+            monster.y = canvas.height;
         }
         if (
             hero.x <= (monster.x + 32) && 
