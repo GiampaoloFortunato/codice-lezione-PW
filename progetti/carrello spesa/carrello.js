@@ -12,42 +12,42 @@ let car = {
         }
     },
     totalPrice: function(){
-        return this.shoppingBag.reduce((acc, item) => acc + item.price, 0);
+        return this.shoppingBag.reduce((acc, item) => acc + item.price, 0).toFixed(2);
     }
 };
 
 let elemAdd;
 let elemDelete;
 
-window.addEventListener("click", () => main());
-
-function main(){  
-    elemAdd = document.getElementsByClassName("add");
-    elemDelete = document.getElementsByClassName("delete");
-    fCicloAdd();
-    fCicloDelete();  
+window.onload = function(){
+    elemAdd = document.getElementById("prodotti");
+    elemDelete = document.getElementById("cntCarrello");  
+    elemAdd.addEventListener("click", (evento) => visualizzaCarrello(evento));
+    elemDelete.addEventListener("click", (evento) => cancellaDaCarello(evento));
 }
 
-function fCicloAdd(){
+function eventAdd(){
     for(let i = 0; i < elemAdd.length; i++){
         elemAdd[i].addEventListener("click",() => visualizzaCarrello(i));
     }
 }
 
-function visualizzaCarrello(index){
-    aggiungiProdotto(index);
+function visualizzaCarrello(evento){
+    const nodoGenitore = evento.target.parentNode.parentNode;
+    aggiungiProdotto(nodoGenitore);
     visualizzaNuovoProdotto();
     stampaPrezzo();
 }
 
-function aggiungiProdotto(index){
+function aggiungiProdotto(nodoGenitore){
+    let i;
+    car.shoppingBag.length == 0 ? i = 0 : i = car.shoppingBag[car.shoppingBag.length-1].id + 1; 
     car.add(
-        {id:index, name: document.getElementsByTagName("h3")[index].innerText,price: parseFloat(document.getElementsByClassName("price")[index].innerText)}
+        {id: i, name: nodoGenitore.getElementsByTagName("h3")[0].innerText,price: parseFloat(nodoGenitore.getElementsByClassName("price")[0].innerText)}
     );
 }
 
 function visualizzaNuovoProdotto(){
-    //modo 1
     let li = document.createElement("li");
     li.className = "prodList";
     let div = document.createElement("div");
@@ -62,26 +62,20 @@ function visualizzaNuovoProdotto(){
     li.appendChild(div);
     li.appendChild(button);
     document.getElementById("lista").innerHTML += li.outerHTML;
-
-    //modo 2
-    //document.getElementById("lista").innerHTML += "<li class='prodList'> <p>" + car.shoppingBag[car.shoppingBag.length-1].name + "</p><div class='costo'>"+ car.shoppingBag[car.shoppingBag.length-1].price + "</div><button class='delete'>x</button></li>";
 }
 
 function stampaPrezzo(){
-    if(car.shoppingBag.length != 0){
-        document.getElementById("totalPrice").innerHTML = "<p>" + car.totalPrice() +"</p>";
+    let stampa = document.getElementById("totalPrice");
+    if(car.shoppingBag.length > 0){
+        stampa.innerHTML = "<p>" + car.totalPrice() +"</p>";
+    }else{
+        stampa.innerHTML = "";
     }
 }
 
-//Non funziona se premo il pulsante, ma la funzione è corretta, in quanto quando la eseguo da console si comporta nel modo previsto.
-function fCicloDelete(){
-    for(let i = 0; i < car.shoppingBag.length; i++){
-        elemDelete[i].addEventListener("click", () => cancellaDaCarello(i));
-    }
-}
-
-function cancellaDaCarello(index){
-    car.remove(car.shoppingBag[index].name);
+function cancellaDaCarello(evento){
+    let nodoGenitore = evento.target.parentNode;
+    car.remove(nodoGenitore.getElementsByTagName("p")[0].innerText);
     visualizzaProdotti();
     stampaPrezzo();
 }
