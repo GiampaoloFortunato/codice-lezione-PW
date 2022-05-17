@@ -91,7 +91,7 @@
     addEventListener("keydown", (e)=> keysDown[e.keyCode] = true);
     addEventListener("keyup", (e) => {delete keysDown[e.keyCode]});
 
-    function update(modifier){
+    function update(modifier, difficolta){
         //37 corrisponde al pulsante "sinistra" 
         if(37 in keysDown && navicella.x > 0){
             navicella.x -= navicella.speed * modifier;
@@ -114,8 +114,8 @@
                 }
             });
         }
-        createEnemy(4);
-        enemyFire(4)
+        createEnemy(difficolta);
+        enemyFire(difficolta)
         viewEnemyFire(modifier);
         hit();
     }
@@ -143,7 +143,7 @@
 
     function viewEnemyFire(modifier){
         listEnemyFire.forEach((el, index) =>{
-            if(Math.abs(navicella.x - el.x) < 20 && Math.abs(navicella.y - el.y) < 20){
+            if(Math.abs(navicella.x - el.x) < 24 && Math.abs(navicella.y - el.y) < 24){
                 navicella.x = -1000;
                 gameOver();
             }
@@ -180,7 +180,7 @@
     function main(){
         let now = Date.now();
         let delta = now - then;
-        update(delta/1000);
+        update(delta/1000, 9);
         render();
         then = now;
         requestAnimationFrame(main);

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es4</title>
+    <style>
+        .modale{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            transform: translate(-50%,-50%);
+            background-color: coral;
+            padding: 20px;
+            z-index: 1;
+        }
+        .hidden{
+            display: none;
+        }
+        .overlay{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .close{ 
+            position: absolute;
+            top:0;
+            right: 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="btn-show">Show Modal</button>
+    </header>
+    <h1>Pagina con Modale</h1>
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum officiis alias earum ad saepe, aspernatur, quam sunt distinctio, ea vel reiciendis odio itaque dicta repellendus commodi ratione temporibus quo. Quibusdam, enim! Molestias excepturi doloremque eveniet rerum perspiciatis tenetur cumque ex vero corporis? Dicta odio rerum nobis molestiae qui, ratione alias?</p>
+        <p>Id illum blanditiis a quod dolorum nam in, velit nostrum laboriosam! Ea sed hic unde modi delectus consequatur repellat dicta sequi veritatis. Laudantium cupiditate corporis expedita rem, nulla id nobis enim suscipit maxime aspernatur deserunt quasi consequuntur inventore facere illo, beatae ad commodi unde earum libero cumque est blanditiis dolor!</p>
+        <p>Asperiores, animi tenetur ex autem amet ipsam aliquam voluptatem cum optio maiores. Doloremque reprehenderit esse ducimus autem repellendus natus sed ea delectus, cumque culpa, eius, tenetur quia minus magni sequi commodi a. Amet consequatur laborum at eaque optio odio libero facere debitis veritatis numquam! Soluta corrupti magni fugiat consequuntur at.</p>
+    </section>
+    <div class="modale hidden">
+
+        <span class="close">[x]</span>
+        <h2>Testo del modale</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa beatae, delectus quos vero assumenda reiciendis alias minus illum numquam porro!</p>
+    </div>
+    <div class="overlay hidden">
+    </div>
+    <script>
+        const modale = document.querySelector(".modale");
+        const btn = document.querySelector(".btn-show");
+        const overlay = document.querySelector(".overlay");
+        const close = document.querySelector(".close");
+
+        btn.addEventListener("click", () => {
+            modale.classList.remove("hidden")
+            overlay.classList.remove("hidden");
+            
+        });
+        close.addEventListener("click", () => {    
+            modale.classList.add("hidden")
+            overlay.classList.add("hidden");
+        })
+    </script>
+</body>
+</html>

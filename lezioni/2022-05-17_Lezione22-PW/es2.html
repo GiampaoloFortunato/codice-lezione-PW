@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es2</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test sezioni dinamiche</h1>
+    <section>
+        <h2 class="click-sec">Sezione 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur debitis officia tempora rerum sapiente deleniti consequatur possimus modi nam quibusdam!</p>
+    </section>
+    <section>
+        <h2 class="click-sec">Sezione 2</h2>
+        <p>Totam quod in temporibus aspernatur ullam debitis laborum laboriosam necessitatibus tenetur minima, quidem aliquam. Illo, cupiditate soluta? Debitis, obcaecati iusto.</p>
+    </section>
+    <section>
+        <h2 class="click-sec">Sezione 3</h2>
+        <p>Assumenda dolore ipsam dolorem. Nesciunt labore obcaecati delectus, debitis sed corrupti. Rerum commodi quam magni praesentium, culpa harum asperiores omnis.</p>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll(".click-sec");
+        
+        const colorElement = function(e){
+            e.target.nextElementSibling.classList.toggle("red");
+        };
+        sections.forEach((el) => el.addEventListener("click", colorElement));
+    </script>
+</body>
+</html>

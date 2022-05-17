@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es3</title>
+</head>
+<body>
+    <form action="" class="my-form">
+        <input type="text" class="inp-txt" size="50">
+        <input type="submit" value="add">
+    </form>
+    <h2>Lista dinamica</h2>
+    <ul class="dyn-list">
+
+    </ul>
+    <script>
+        const myForm = document.querySelector(".my-form");
+        const txt = document.querySelector(".inp-txt");
+        const myList = document.querySelector(".dyn-list");
+
+        const addElemList = function(e){
+            e.preventDefault();
+            let elemento = document.createElement("li");
+            elemento.innerText = txt.value;
+            myList.appendChild(elemento);
+            txt.value = "";
+            myList.addEventListener("click", removeElemList);
+        }
+
+        const removeElemList = function(e){
+            e.target.remove();
+        }
+
+        myForm.addEventListener("submit", addElemList);
+        
+    </script>
+</body>
+</html>
