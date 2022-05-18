@@ -1,9 +1,7 @@
 /**
  * TODO: 
- *      1. FIX sparo continuo
- *      2. Modificare spawn avversari (troppo vicini)
- *      3. Far sparare gli avversari
- *      4. Aggiungere vite alle navicelle
+ *      1. Migliorare sparo continuo
+ *      2. Aggiungere vite alle navicelle
  */
 
 (function(){
@@ -132,12 +130,17 @@
     }
 
     function createEnemy(difficolta){
-        let rand = Math.random();
-        if(rand < difficolta * 10**-2){
+        let spawn = true;
+        if(Math.random() < difficolta * 10**-2){
             let newEnemy = Object.assign({}, enemy);
             newEnemy.x = parseInt(Math.random() * canvas.width);
             newEnemy.y = parseInt(Math.random() * 200);
-            listEnemy[listEnemy.length] = newEnemy;
+            listEnemy.forEach((el) => {
+                if (Math.abs(el.x - newEnemy.x) < 32  && Math.abs(el.y - newEnemy.y) < 32){
+                    spawn = false;
+                }
+            })
+            if (spawn) {listEnemy[listEnemy.length] = newEnemy;}
         }
     }
 
