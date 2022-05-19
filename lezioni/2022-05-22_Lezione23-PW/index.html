@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Asincrono</title>
+</head>
+<body>
+    <!-- Primo esempio di asincrona
+    <script>
+        function main(){
+            console.log("a");
+            setTimeout(function(){console.log("B")}, 0);
+            console.log("c");
+        }
+        main();
+    </script>
+    -->
+    <!-- Introduzione Promise
+    <script>
+        const myPromise = new Promise(function(resolve, reject){
+            setTimeout(() => resolve("la mia prima promise è stata un successo!"), 5000);
+        });
+        myPromise.then(
+            result => console.log(result),
+            error => console.log(error)
+        );
+    </script>
+    -->
+    <!-- Promise vs callback normali
+    <script>
+        //Le promise hanno prorità rispetto le callback normali
+        console.log("Start");
+        setTimeout(() => console.log("timer 0"), 0);
+        Promise.resolve("Resolved Promise").then((res) => console.log(res));
+
+        //una promise molto lenta ritarda tutte le callback normali
+        Promise.resolve("Resolved Promise 2").then((res) => {
+            console.log(res);
+            for (let index = 0; index < 10**10; index++) {}
+        });
+        console.log("Stop");
+    </script>
+    -->
+    <script>
+        //codice illegibile dopo tot chiamate. Non va bene, quindi uso promise
+        
+        setTimeout(() => {
+            console.log("Dopo 1 sec");
+            setTimeout(() => {
+                console.log("Dopo 2 sec");
+                setTimeout(() => {
+                    console.log("Dopo 3 sec");
+                }, 1000);
+            }, 1000);
+        }, 1000);
+        
+        //Si risolve con promise e linearizzando codice
+        const wait = function(sec){
+            return new Promise(
+                function(resolve, reject){
+                    setTimeout(resolve, sec * 1000);
+                }
+            );
+        }
+        wait(1).then(() => {
+            console.log("Dopo 1 sec");
+            return wait(1);
+        }).then(() => {
+            console.log("Dopo 2 sec");
+            return wait(1);
+        }).then(() => {
+            console.log("Dopo 3 sec");
+        });
+    </script>
+</body>
+</html>
