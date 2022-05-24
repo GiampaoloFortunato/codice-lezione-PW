@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch con Async/Await</title>
+    <style>
+        .my-image{
+            position: fixed;
+            top: 60px;
+            right: 180px;
+            
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prof su github</h1>
+    <section>
+        <button onclick="getInfo2('loreti')">Loreti</button>
+        <button onclick="getInfo2('bracciale')">Bracciale</button>
+        <button onclick="getInfo2('salsano')">Salsano</button>
+        <button onclick="getInfo2('detti')">Detti</button>
+    </section>
+    <script>
+    /* async assicura che quello tornato sarà una promise. Quindi non tornano valori ma promise.
+        async function f(){
+            return 1;
+        }
+    
+    La parola await trasforma il codice asincrono in codice che sembra sincrono, ma non è sincrono.
+    */
+    
+    async function getInfo2(docente){
+        try{    
+            const url_doc = `http://pw.netgroup.uniroma2.it/docenti/${docente}.json`;
+            const res = await fetch(url_doc);
+            if(!res.ok){throw new Error(res.status)}
+
+            let json_obj = await res.json();
+            const url_usr = `https://api.github.com/users/${json_obj.name}`;
+            const res2 = await fetch(url_usr);
+            
+            if(!res2.ok){throw new Error(res.status)}
+
+            let usr_info = await res2.json();
+
+            const image = document.createElement('img');
+            image.src = usr_info.avatar_url;
+            image.classList.add("my-image");
+            document.body.appendChild(image);
+            image.addEventListener("load" , () => {
+                setTimeout(() => image.remove(), 5000);
+            });
+        }catch(error){
+            alert("Errore\n" + error);
+        }
+            
+    }
+    </script>
+</body>
+</html>

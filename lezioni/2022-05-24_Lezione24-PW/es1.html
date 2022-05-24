@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+    <style>
+        .my-image{
+            position: fixed;
+            top: 60px;
+            right: 80px;
+            
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        XMLHttpRequest non si usa più. Si usa AJAX con fetch. In questo modo si usano promise
+    -->
+    <h1>Prof su github</h1>
+    <section>
+        <button onclick="getInfo('loreti')">Loreti</button>
+        <button onclick="getInfo('bracciale')">Bracciale</button>
+        <button onclick="getInfo('salsano')">Salsano</button>
+        <button onclick="getInfo('detti')">Detti</button>
+    </section>
+    <script>
+        /* Primo esempio di uso fetch. Cascata di then
+        const url = "https://jsonplaceholder.typicode.com/users";
+        fetch(url)
+            .then(res => res.json())
+            .then(res => res.map(user => user.username))
+            .then(usernames => console.log(usernames))
+            .catch(err => console.log('Errore: ', err.statusText));
+        */
+        /* Secondo esempio - Prof su github.*/
+        const getInfo = function(docente){
+            const url_doc = `http://pw.netgroup.uniroma2.it/docenti/${docente}.json`;
+            fetch(url_doc)
+                .then((res) => res.json())
+                .then(json_obj => {
+                    url = `https://api.github.com/users/${json_obj.name}`;
+                    return fetch(url);
+                })
+                .then( res => res.json())
+                .then( usr_info => {
+                    const image = document.createElement('img');
+                    image.src = usr_info.avatar_url;
+                    image.classList.add("my-image");
+                    document.body.appendChild(image);
+                    image.addEventListener("load" , () => {
+                        setTimeout(() => image.remove(), 5000);
+                    });
+                })
+                .catch(err => alert("Errore:\n" + err));
+        }
+    </script>
+</body>
+</html>
