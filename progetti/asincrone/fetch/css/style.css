@@ -1,0 +1,38 @@
+*{padding: 0;margin: 0;box-sizing: border-box;}
+body{background-color: greenyellow;}
+#wrap{
+    width: 800px;
+    margin:10px  auto ;
+    background-color: #f0f0f0;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1{
+    padding: 20px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+button{
+    width: 80px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.tb{
+    margin-left: 80px;
+    font-size: 18px;
+    border: 2px solid #606060;
+}
+.tb th:first-child{
+    border-left: none;
+}
+.tb th{
+    padding: 5px 20px;
+    border-left: 2px solid #606060;
+}
+
+.tb td{
+    padding: 2px 10px;
+    font-size: 14px;
+    border-top: 2px solid #606060;
+}
