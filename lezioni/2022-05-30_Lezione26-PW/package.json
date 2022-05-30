@@ -1,0 +1,19 @@
+{
+  "name": "2022-05-30_lezione26-pw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "es1.js",
+  "scripts": {
+    "start1": "node es1.js",
+    "start2": "node es2.js",
+    "start-dev": "nodemon es2.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "upper-case": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
