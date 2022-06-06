@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es2</title>
+    <style>
+        /*  Mancano margini e padding per header, main e footer */
+
+        *{margin:0; padding: 0; box-sizing: border-box;}
+
+        #wrap{
+            display: flex;
+            flex-wrap: wrap;
+            width: 400px;
+            border: 1px solid blue;
+            margin: 0px auto;
+        }
+        header{width: 100%;}
+        main{
+            width: 100%;
+            padding: 20px;
+        }
+        footer{width: 100%;}
+
+        @media (min-width: 800px){
+            #wrap{width: 700px;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- Cosa deve contenere il main? -->
+        <header></header>
+        <main>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

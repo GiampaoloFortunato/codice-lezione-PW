@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es4</title>
+    <style>
+
+        *{margin:0; padding: 0; box-sizing: border-box;}
+
+        #wrap{
+            display: flex;
+            flex-wrap: wrap;
+            width: 400px;
+            border: 1px solid blue;
+            margin: 0px auto;
+        }
+        header{width: 100%;}
+        main{
+            width: 100%;
+            padding: 20px;
+        }
+        footer{
+            width: 100%;
+            padding: 15px;
+        }
+        footer p{
+            text-decoration: underline;
+        }
+       
+
+        @media (min-width: 800px){
+            #wrap{width: 700px;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>Lista della spesa</h1>
+        </header>
+        <main>
+            <section id="listaSpesa"></section>
+            <button id="buttonConverti" onclick="converti()">Converti</button>
+        </main>
+        <footer>
+            <p>La tua lista della spesa</p>
+        </footer>
+    </div>
+    <script>
+        const url = "http://127.0.0.1:8080/data";
+        window.onload = fetch(url)
+                            .then(res => res.text())
+                            .then(jsonObj => {
+                                let pre = document.createElement('pre');
+                                let contentMain = document.getElementById('listaSpesa');
+                                pre.innerText = jsonObj;
+                                contentMain.appendChild(pre);
+                            })
+                            .catch(err => alert("errore: " + err));
+
+        const converti = function(){
+            const obj = JSON.parse(document.getElementsByTagName('pre')[0].innerText);
+            let section = document.getElementById('listaSpesa');
+            let ul = document.createElement('ul');
+
+            console.log(obj);
+
+            for (let index=0; index<obj.length; index++) {
+                let li = document.createElement('li');
+                li.innerText = obj[index].prodotto + " " + obj[index].descr;
+                ul.appendChild(li);
+            }
+            ul.style.fontWeight = 'bold';
+            section.appendChild(ul);
+            
+            //Elimina bottone
+            document.getElementsByTagName('pre')[0].remove();
+            document.getElementById("buttonConverti").remove();
+        }
+        
+    </script>
+</body>
+</html>
