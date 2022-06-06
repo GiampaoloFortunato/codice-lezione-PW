@@ -1,0 +1,18 @@
+[
+    {
+        "prodotto": "pane",
+        "descrizione": "1kg"
+    },
+    {
+        "prodotto": "latte",
+        "descrizione": "2 litri"
+    },
+    {
+        "prodotto": "pere",
+        "descrizione": "500gr"
+    },
+    {
+        "prodotto": "vino",
+        "descrizione": "1 bottiglia"
+    }
+]
