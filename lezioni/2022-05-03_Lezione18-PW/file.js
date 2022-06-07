@@ -5,11 +5,11 @@
  * Il primo esegue ciclicamente ogni tot ms una funzione, mentre la seconda esegue una volta sola la funzione dopo tot ms
  */
 
-let counter = 0
+let counterVar = 0;
 let timerId = setInterval(function() {
     console.log("ciao");
-    counter += 1;
-    if(counter >= 4){
+    counterVar += 1;
+    if(counterVar >= 4){
         clearInterval((timerId));
     }
 }, 500);
@@ -18,18 +18,24 @@ let timerId = setInterval(function() {
 
 
 /*
- * CLOSURE - sono fondamentali
+* CLOSURE - sono fondamentali
+*
+*   Posso avere metodi o attributi provati. Posso quindi simulare la OOP.
+*   Lo scope della inner function si chiude su quello del padre (outer function)
 */
 
 function salutatore(name){
     let n = name;
-    return function(){
+    let x = 10;
+    return function(y, z){
         console.log(`Ciao ${n}`);
+        console.log('Variabile della outerFunction salutatore: ' +  x);
+        console.log(y + z);
     };
 }
 
 let s = salutatore("Mario");
-s();
+s("ciao sono mario", 10);
 
 function counter(){
     let a = 0;
@@ -56,5 +62,11 @@ let p = Player();
 p.down();
 p.right();
 p.printCoords();
+
+
+let p1 = Player();
+p1.up();
+p1.printCoords();
+
 
 
