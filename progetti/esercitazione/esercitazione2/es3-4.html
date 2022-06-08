@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es1</title>
+    <script src="es2.js"></script>
+    <style>
+        /*Es 3*/
+        body{
+            width: 900px;
+            margin: 0px auto;
+        }
+        /*Es 4*/
+        ul#lista-menu{
+            list-style: none;
+            display: flex;
+        }
+        li{padding-left: 10px;}
+
+        @media (max-width: 1000px){
+            /*Es 3*/
+            body{
+                width: 400px;
+            }
+            /*Es 4*/
+            ul#lista-menu{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Example.com</h1>
+    </header>
+    <nav>
+        <p>Menu</p>
+        <ul id="lista-menu">
+            
+        </ul>
+    </nav>
+    <main>
+        <h1>Home Page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima consectetur ipsa corrupti dolorem voluptas deserunt repellat ullam sunt ea magnam est eligendi nesciunt saepe praesentium blanditiis eius, debitis dolore excepturi nam. Fuga optio nihil provident esse quia? Exercitationem debitis veritatis voluptates beatae dignissimos similique, esse, ullam quis totam obcaecati pariatur.</p>
+    </main>
+    <footer>
+        <a href="#">Copyright - Example.com</a>
+    </footer>
+</body>
+</html>
