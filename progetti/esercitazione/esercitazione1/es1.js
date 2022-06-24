@@ -10,7 +10,6 @@ const server = http.createServer((req, res) => {
     if(url == '/data'){
         res.writeHead(200, {'Content-type': 'application/json', 'Access-Control-Allow-Origin': '*'});
         res.end(jsonFileInput);
-        console.log(jsonFileInput);
     }else{
         //Codice di stato? È giusto mettere 200?
         //res.writeHead(200, {'Content-type': 'application/json'});
