@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example.com</title>
+    <style>
+        body{
+            width: 900px;
+            margin: auto;
+        }
+        nav ul{
+            display: flex;
+        }
+        nav ul li{
+            margin-left: 20px;
+        }
+        #main article{
+            display: flex;
+        }
+        #main article section{
+                width: 33%;
+            }
+        .hidden{
+            display: none;
+        }
+        .colorBlu{
+            color: blue;
+        }
+        @media (max-width: 1000px){
+            body{
+                width: 400px;
+            }
+            nav ul{
+                flex-direction: column;
+            }
+            #main article{
+                flex-direction: column;
+            }
+            #main article section{
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>Example.com</header>
+    <nav><h1 id="menu">MENU</h1>
+    <ul>
+        <li><a href="#">Home Page</a></li>
+        <li><a href="#">Informazioni</a></li>
+        <li><a href="#">Prodotti</a></li>
+        <li><a href="#">Contatti</a></li>
+    </ul></nav>
+    <main id="main">
+        <h1>Articoli</h1>
+        <article>
+            <section>
+                
+            </section>
+            <section>
+                
+            </section>
+            <section>
+                
+            </section>
+        </article>
+    </main>
+    <footer><a href="#">Copyright - Example.com</a></footer>
+
+    <script>
+        const url = "./file.json";
+        fetch(url)
+            .then(res => res.json())
+            .then(obj => insertToSection(obj))
+            .catch(err => alert(err));
+
+        const insertToSection = function(obj){
+            const main = document.getElementById("main");
+            const section = main.getElementsByTagName("section");
+
+            const dim = section.length;
+
+            for(let i=0; i<dim;i++){
+                const titolo = document.createElement('h2');
+                const contenuto = document.createElement('p');
+                titolo.innerText = obj[i].titolo;
+                contenuto.innerText = obj[i].contenuto;
+
+                section[i].appendChild(titolo);
+                section[i].appendChild(contenuto);
+            }
+        }
+
+        const scrittaMenu = document.getElementById("menu");
+
+        scrittaMenu.addEventListener("click", (ev) => {
+            if(window.innerWidth < 1000){
+                const nav = document.getElementsByTagName("nav")[0];
+                const ul = nav.getElementsByTagName("ul")[0];
+                console.log(ul);
+                ul.classList.toggle("hidden");
+                ev.target.classList.toggle("colorBlu");
+            }
+        });
+
+    </script>
+</body>
+</html>

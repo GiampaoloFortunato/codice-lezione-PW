@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example.com</title>
+    <style>
+        body{
+            width: 900px;
+            margin: auto;
+        }
+        @media (max-width: 1000px){
+            body{
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Example.com</header>
+    <nav>MENU
+    <ul>
+        <li><a href="#">Home Page</a></li>
+        <li><a href="#">Informazioni</a></li>
+        <li><a href="#">Prodotti</a></li>
+        <li><a href="#">Contatti</a></li>
+    </ul></nav>
+    <main id="main">
+        Articoli
+        <section>
+            
+        </section>
+        <section>
+            
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    <footer><a href="#">Copyright - Example.com</a></footer>
+
+    <script>
+        const url = "./file.json";
+        fetch(url)
+            .then(res => res.json())
+            .then(obj => insertToSection(obj))
+            .catch(err => alert(err));
+
+        const insertToSection = function(obj){
+            const main = document.getElementById("main");
+            const section = main.getElementsByTagName("section");
+
+            const dim = section.length;
+
+            for(let i=0; i<dim;i++){
+                const titolo = document.createElement('h2');
+                const contenuto = document.createElement('p');
+                titolo.innerText = obj[i].titolo;
+                contenuto.innerText = obj[i].contenuto;
+
+                section[i].appendChild(titolo);
+                section[i].appendChild(contenuto);
+            }
+        }
+    </script>
+</body>
+</html>
